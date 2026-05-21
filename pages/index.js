@@ -1,7 +1,7 @@
 function home() {
   return (
     <div>
-      <h1>au</h1>
+      <h1>teste</h1>
     </div>
   )
 }
