@@ -1,0 +1,8 @@
+services:
+  databases:
+    image: "postgres:16.0-alpine3.18"
+    environment:
+      POSTGRES_USER: "renanlocaltabnews"
+      POSTGRES_PASSWORD: "321776renanlocal"
+    ports:
+      - "5432:5432"
