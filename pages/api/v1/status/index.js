@@ -19,7 +19,7 @@ async function status(req, resp) {
     updated_at: updated_at,
     dependencies: {
       database: {
-        postgres_version: Number(versiontext),
+        postgres_version: versiontext,
         max_connections: max_c_number,
         active_connections: active_c_text,
       },

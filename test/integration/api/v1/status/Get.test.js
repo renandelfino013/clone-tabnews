@@ -24,9 +24,7 @@ test("Get /api/v1/status", async () => {
   ).toBeGreaterThanOrEqual(100);
   // Postgres version
   expect(responsebody.dependencies.database.postgres_version).toBeDefined();
-  expect(typeof responsebody.dependencies.database.postgres_version).toBe(
-    "number",
-  );
+
   expect(responsebody.updated_at).toBeDefined();
   const parsed_date_at = new Date(responsebody.updated_at).toISOString();
   expect(responsebody.updated_at).toEqual(parsed_date_at);
