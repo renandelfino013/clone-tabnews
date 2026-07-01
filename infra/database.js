@@ -6,6 +6,11 @@ export async function query(queryobject, values) {
     user: process.env.POSTGRES_USER,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
+    ssl:
+      process.env.POSTGRES_SSL === "true"
+        ? { rejectUnauthorized: false }
+        : false,
+    ca: process.env.CA_PRODUCTION ? process.env.CA_PRODUCTION : undefined,
   });
   try {
     await client.connect();
