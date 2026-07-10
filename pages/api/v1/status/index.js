@@ -1,9 +1,9 @@
-import { query } from "infra/database";
+import db from "infra/database";
 async function status(req, resp) {
   const updated_at = new Date().toISOString();
-  const pgversion = await query("SHOW server_version;");
-  const max_c = await query("SHOW max_connections");
-  const active_c = await query(
+  const pgversion = await db.query("SHOW server_version;");
+  const max_c = await db.query("SHOW max_connections");
+  const active_c = await db.query(
     "SELECT count(*)::int FROM pg_stat_activity WHERE datname = $1",
     [process.env.POSTGRES_DB],
   );

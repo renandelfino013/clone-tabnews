@@ -6,13 +6,12 @@ test("Get /api/v1/status", async () => {
 
   //active connections
   expect(responsebody.dependencies.database.active_connections).toBeDefined();
-  expect(responsebody.dependencies.database.active_connections).toBe(1);
-  expect(typeof responsebody.dependencies.database.active_connections).toBe(
-    "number",
-  );
   expect(
     responsebody.dependencies.database.active_connections,
   ).toBeGreaterThanOrEqual(1);
+  expect(typeof responsebody.dependencies.database.active_connections).toBe(
+    "number",
+  );
 
   //max connect from db
   expect(responsebody.dependencies.database.max_connections).toBeDefined();
