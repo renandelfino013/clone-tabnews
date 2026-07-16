@@ -8,3 +8,6 @@
 coverage/
 .env.development
 .vscode/
+LICENSE
+.prettierignore
+.prettierrc 
