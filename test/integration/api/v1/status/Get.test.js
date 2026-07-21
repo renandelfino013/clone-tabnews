@@ -1,3 +1,8 @@
+import orchestrator from "test/orchestrator.js"
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices()
+})
 test("Get /api/v1/status", async () => {
   const result = await fetch("http://localhost:3000/api/v1/status/");
   expect(result.status).toBe(200);
@@ -23,6 +28,8 @@ test("Get /api/v1/status", async () => {
   ).toBeGreaterThanOrEqual(100);
   // Postgres version
   expect(responsebody.dependencies.database.postgres_version).toBeDefined();
+   expect(responsebody.dependencies.database.postgres_version).toBe("16.0");
+
 
   expect(responsebody.updated_at).toBeDefined();
   const parsed_date_at = new Date(responsebody.updated_at).toISOString();
