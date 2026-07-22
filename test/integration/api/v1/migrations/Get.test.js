@@ -1,13 +1,12 @@
-
 import { query } from "infra/database.js";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env.development" });
 
-import orchestrator from "test/orchestrator.js"
+import orchestrator from "test/orchestrator.js";
 
 beforeAll(async () => {
-  await orchestrator.waitForAllServices()
-})
+  await orchestrator.waitForAllServices();
+});
 async function cleandb() {
   await query("DROP SCHEMA public CASCADE; CREATE SCHEMA public;");
 }

@@ -22,7 +22,7 @@ async function status(req, resp) {
         postgres_version: versiontext,
         max_connections: max_c_number,
         active_connections: active_c_text,
-        teste:"apenas um teste"
+        teste: "apenas um teste",
       },
     },
   });
