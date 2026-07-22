@@ -5,14 +5,14 @@ on: pull_request
 jobs: 
   jest: 
     name: jest ubuntu
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/Checkout@v4
+      - uses: actions/checkout@v4
       
-      - uses: actions/setup-node@4
+      - uses: actions/setup-node@v4
         with:
-        node-version: "lts/hydrogen"
+          node-version: "lts/hydrogen"
 
       - run: npm ci  
       
-      - run: npm test  
+      - run: npm test
