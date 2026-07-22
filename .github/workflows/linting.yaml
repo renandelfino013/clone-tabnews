@@ -1,4 +1,4 @@
-name: Linting-estilos-e-qualidade
+name: Linting/Prettier
 
 on: pull_request
 
