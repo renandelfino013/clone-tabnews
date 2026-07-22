@@ -28,7 +28,7 @@ test("Get /api/v1/status", async () => {
   ).toBeGreaterThanOrEqual(100);
   // Postgres version
   expect(responsebody.dependencies.database.postgres_version).toBeDefined();
-   expect(responsebody.dependencies.database.postgres_version).toBe("17.0");
+   expect(responsebody.dependencies.database.postgres_version).toBe("16.0");
 
 
   expect(responsebody.updated_at).toBeDefined();
