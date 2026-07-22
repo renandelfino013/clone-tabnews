@@ -8,9 +8,11 @@ jobs:
     runs_on: ubuntu-latest
     steps:
       - uses: actions/Checkout@v4
+      
       - uses: actions/setup-node@4
         with:
         node-version: "lts/hydrogen"
 
       - run: npm ci  
+      
       - run: npm test  
