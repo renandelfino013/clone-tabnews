@@ -26,7 +26,6 @@ async function migrations(req, resp) {
         dryRun: true,
       });
 
-      const request = req.body;
       const mg = await migrations;
       return resp.status(200).json(mg);
     } else if (req.method === "POST") {

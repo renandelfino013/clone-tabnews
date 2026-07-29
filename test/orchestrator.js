@@ -1,3 +1,5 @@
+/* eslint-disable import/no-anonymous-default-export */
+
 import retry from "async-retry";
 
 async function waitForAllServices() {
@@ -12,7 +14,7 @@ async function waitForWebServer() {
   });
 }
 
-async function fetchStatusPage(bail, tryNumber, stdout) {
+async function fetchStatusPage(tryNumber) {
   console.log(tryNumber);
 
   const response = await fetch("http://localhost:3000/api/v1/status");

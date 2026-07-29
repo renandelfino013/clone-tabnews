@@ -4,9 +4,7 @@ import orchestrator from "test/orchestrator.js";
 beforeAll(async () => {
   await orchestrator.waitForAllServices();
 });
-async function cleandb() {
-  await query("DROP SCHEMA public CASCADE; CREATE SCHEMA public;");
-}
+
 async function migrationscomplete() {
   let result = await db.query("SELECT * FROM pgmigrations;");
   return result;
