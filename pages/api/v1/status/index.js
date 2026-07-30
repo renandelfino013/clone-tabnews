@@ -7,6 +7,7 @@ async function status(req, resp) {
     "SELECT count(*)::int FROM pg_stat_activity WHERE datname = $1",
     [process.env.POSTGRES_DB],
   );
+
   console.log("active connections", active_c);
   const active_c_text = active_c[0].count;
 
