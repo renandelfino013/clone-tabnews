@@ -1,6 +1,7 @@
-import migrationRunner from "node-pg-migrate";
 import { join } from "node:path";
+import { runner as migrationRunner } from "node-pg-migrate";
 import db from "infra/database.js";
+
 async function migrations(req, resp) {
   if (req.method !== "POST" && req.method !== "GET") {
     return resp.status(405).json({

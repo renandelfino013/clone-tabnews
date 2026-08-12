@@ -1,14 +1,15 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+import dotenv from "dotenv";
+import nextJest from "next/jest.js";
 
-const dotenv = require("dotenv");
 dotenv.config({ path: ".env.development" });
 
-const nextjest = require("next/jest");
-const createjestConfig = nextjest({
+const createJestConfig = nextJest({
   dir: ".",
 });
-const jestConfig = createjestConfig({
-  moduleDirectories: ["node_modules", "<rootDir>/"],
+
+const jestConfig = createJestConfig({
+  moduleDirectories: ["node_modules", "<rootDir>"],
   testTimeout: 80000,
 });
-module.exports = jestConfig;
+
+export default jestConfig;

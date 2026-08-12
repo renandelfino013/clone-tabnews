@@ -1,5 +1,5 @@
 {
-  "compileroptions": {
-    "baseurl": "."
+  "compilerOptions": {
+    "baseUrl": "."
   }
 }
